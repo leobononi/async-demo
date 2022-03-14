@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AsyncDemo.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to the Webinar" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label HorizontalTextAlignment="Center" Text="Async Demonstration" FontSize="Title" Padding="30,10,30,10"/>
+        <Button Text="Do Normal" Clicked="DoSyncClick" />
+        <Button Text="Do Async" Clicked="DoAsyncClick" />
+        <Button Text="Do Async Parallel" Clicked="DoAsyncParallelClick" />
+        <Button Text="Try Clicking Me!" Clicked="TryClick" />
+        <!--<Button Text="Do Async" Command="{Binding Path=SaveCommand}" />-->
+        <Frame BackgroundColor="#efefef" Padding="24" CornerRadius="3">
+            <ListView x:Name="ResultsView" ItemsSource="{Binding Results}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell TextColor="Black"  Text="{Binding DisplayValue}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+        <Label FontSize="30" x:Name="executionTime" />
+    </StackLayout>
+
+</ContentPage>
